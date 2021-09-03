@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/io.rsocket/rsocket-core
+    implementation group: 'io.rsocket', name: 'rsocket-core', version: '0.11.13'
+    // https://mvnrepository.com/artifact/io.rsocket/rsocket-transport-netty
+    implementation group: 'io.rsocket', name: 'rsocket-transport-netty', version: '0.11.13'
+    implementation 'junit:junit:4.13.1'
+// https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.32'
+    implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.32'
+//    testImplementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.32'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}
